@@ -46,7 +46,7 @@ function App() {
   Price: '$40.00',
   sale: false,
 }
-  ]
+  ];
 
   let [cart,setCart] = useState(0)
   return <>
