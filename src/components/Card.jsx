@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 
-function Card({ cart, setCart,data }) {
+function Card({ cart, setCart,e }) {
   let [toggle, setToggle] = useState(true);
 
-  return (
-    <div className="col mb-5">
+  return <div className="col mb-5">
       <div> Total Order = {cart}</div>
       <div className="card h-100">
         <div
           className="badge bg-dark text-white position-absolute"
           style={{ top: "0.5rem", right: "0.5rem" }}
         >
-          sale
+          {e.sale}
         </div>
 
         <img
@@ -22,12 +21,24 @@ function Card({ cart, setCart,data }) {
 
         <div className="card-body p-4">
           <div className="text-center">
-            <h5 className="fw-bolder">name</h5>
-            <span className="text-muted text-decoration-line-through">
-              price
-            </span>
-            $25.00
-          </div>
+            <h5 className="fw-bolder">{e.name}</h5>
+
+          {e.orginal?(<>
+          
+          <div><span className="text-muted text-decoration-line-through">{e.salePrice}</span>
+            {e.price}</div>
+          </>):(e.price)
+
+          }
+          
+          
+        {/* //    <span className="text-muted text-decoration-line-through">{e.salePrice}</span>
+        //     {e.price} */}
+            
+            
+            
+            </div>
+            
         </div>
 
         <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -57,7 +68,7 @@ function Card({ cart, setCart,data }) {
         </div>
       </div>
     </div>
-  );
+  
 }
 
 export default Card;
