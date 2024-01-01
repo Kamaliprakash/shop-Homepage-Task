@@ -10,7 +10,7 @@ function Card({ cart, setCart,e }) {
           className="badge bg-dark text-white position-absolute"
           style={{ top: "0.5rem", right: "0.5rem" }}
         >
-          {e.sale}
+          {e.sale && 'sale'}
         </div>
 
         <img
@@ -23,18 +23,21 @@ function Card({ cart, setCart,e }) {
           <div className="text-center">
             <h5 className="fw-bolder">{e.name}</h5>
 
-          {e.orginal?(<>
-          
-          <div><span className="text-muted text-decoration-line-through">{e.salePrice}</span>
-            {e.price}</div>
-          </>):(e.price)
+            {e.review && <div className="bi-star-fill"></div>}
+              {e.review && <div className="bi-star-fill"></div>}
+              {e.review && <div className="bi-star-fill"></div>}
+              {e.review && <div className="bi-star-fill"></div>}
+              {e.review && <div className="bi-star-fill"></div>}
 
-          }
+
+
+
           
-          
-        {/* //    <span className="text-muted text-decoration-line-through">{e.salePrice}</span>
-        //     {e.price} */}
-            
+          <span className="text-muted text-decoration-line-through">{e.originalPrice}</span>
+            <div className="mb-2">
+              {e.sale ? <span className="text-danger">{e.Price}</span> : <span>{e.Price}</span>}
+            </div>
+       
             
             
             </div>
